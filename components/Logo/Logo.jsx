@@ -4,8 +4,15 @@ import Link from "next/link";
 
 const Logo = () => {
     return (
-        <Link className="block max-w-12 max-h-[2.8rem]" href="/">
-            <Image className="w-full h-full" src={logo} width={48} height={48} priority alt="logo" />
+        <Link className="block max-w-10 max-h-9" href="/">
+            <Image
+                className="w-full h-full filter dark:invert dark:brightness-0"
+                src={logo}
+                width={40}
+                height={40}
+                priority
+                alt="logo"
+            />
         </Link>
     );
 };

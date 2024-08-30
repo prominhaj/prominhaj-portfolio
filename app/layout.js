@@ -3,7 +3,7 @@ import './globals.css';
 import ThemeProvider from '@/providers/ThemeProvider';
 import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin-ext'] });
 
 export const metadata = {
     title: 'Pro Minhaj',
