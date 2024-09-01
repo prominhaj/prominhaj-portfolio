@@ -1,8 +1,9 @@
-"use client";;
-import React, { useState, useEffect } from "react";
+"use client"
 
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import React, { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
+
 
 export function HoverBorderGradient({
     children,
@@ -13,55 +14,61 @@ export function HoverBorderGradient({
     clockwise = true,
     ...props
 }) {
-    const [hovered, setHovered] = useState(false);
-    const [direction, setDirection] = useState("TOP");
+    const [hovered, setHovered] = useState(false)
+    const [direction, setDirection] = useState("TOP")
 
-    const rotateDirection = currentDirection => {
-        const directions = ["TOP", "LEFT", "BOTTOM", "RIGHT"];
-        const currentIndex = directions.indexOf(currentDirection);
+    const rotateDirection = (currentDirection) => {
+        const directions = ["TOP", "LEFT", "BOTTOM", "RIGHT"]
+        const currentIndex = directions.indexOf(currentDirection)
         const nextIndex = clockwise
             ? (currentIndex - 1 + directions.length) % directions.length
-            : (currentIndex + 1) % directions.length;
-        return directions[nextIndex];
-    };
+            : (currentIndex + 1) % directions.length
+        return directions[nextIndex]
+    }
 
     const movingMap = {
-        TOP: "radial-gradient(20.7% 50% at 50% 0%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
-        LEFT: "radial-gradient(16.6% 43.1% at 0% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
-        BOTTOM:
-            "radial-gradient(20.7% 50% at 50% 100%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
-        RIGHT:
-            "radial-gradient(16.2% 41.199999999999996% at 100% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
-    };
+        TOP: "radial-gradient(20.7% 50% at 50% 0%, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%)",
+        LEFT: "radial-gradient(16.6% 43.1% at 0% 50%, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%)",
+        BOTTOM: "radial-gradient(20.7% 50% at 50% 100%, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%)",
+        RIGHT: "radial-gradient(16.2% 41.2% at 100% 50%, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%)",
+    }
 
-    const highlight =
-        "radial-gradient(75% 181.15942028985506% at 50% 50%, #3275F8 0%, rgba(255, 255, 255, 0) 100%)";
+    const highlight = "radial-gradient(75% 181.16% at 50% 50%, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%)"
 
     useEffect(() => {
         if (!hovered) {
             const interval = setInterval(() => {
-                setDirection((prevState) => rotateDirection(prevState));
-            }, duration * 1000);
-            return () => clearInterval(interval);
+                setDirection((prevState) => rotateDirection(prevState))
+            }, duration * 1000)
+            return () => clearInterval(interval)
         }
-    }, [hovered]);
+    }, [hovered, duration])
+
     return (
-        (<Tag
-            onMouseEnter={(event) => {
-                setHovered(true);
-            }}
+        <Tag
+            onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             className={cn(
-                "relative flex rounded-full border  content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit",
+                "relative flex rounded-full border content-center items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit transition duration-500",
+                "bg-black/20 hover:bg-black/10 dark:bg-white/20 dark:hover:bg-white/10",
                 containerClassName
             )}
-            {...props}>
+            {...props}
+        >
             <div
-                className={cn("w-auto text-white z-10 bg-black px-4 py-2 rounded-[inherit]", className)}>
+                className={cn(
+                    "w-auto z-10 px-4 py-2 rounded-[inherit]",
+                    "bg-white text-black dark:bg-black dark:text-white",
+                    className
+                )}
+            >
                 {children}
             </div>
             <motion.div
-                className={cn("flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit]")}
+                className={cn(
+                    "flex-none inset-0 overflow-hidden absolute z-0 rounded-[inherit]",
+                    "from-black to-transparent dark:from-white dark:to-transparent"
+                )}
                 style={{
                     filter: "blur(2px)",
                     position: "absolute",
@@ -74,8 +81,14 @@ export function HoverBorderGradient({
                         ? [movingMap[direction], highlight]
                         : movingMap[direction],
                 }}
-                transition={{ ease: "linear", duration: duration ?? 1 }} />
-            <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px]" />
-        </Tag>)
-    );
+                transition={{ ease: "linear", duration: duration }}
+            />
+            <div
+                className={cn(
+                    "absolute z-1 flex-none inset-[2px] rounded-[100px]",
+                    "bg-white dark:bg-black"
+                )}
+            />
+        </Tag>
+    )
 }

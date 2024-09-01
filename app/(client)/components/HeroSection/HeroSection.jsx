@@ -40,7 +40,7 @@ const HeroSection = () => {
                     </div>
 
                     <div
-                        className="relative w-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 p-[3px] transition-all duration-300 hover:from-blue-600 hover:to-purple-700 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 tracking-wider max-w-[12rem] max-h-[12rem] sm:max-h-[13.75rem] sm:max-w-[13.75rem] md:max-w-[300px] md:max-h-[300px] rounded-full overflow-x-clip"
+                        className="relative w-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 p-[1px] transition-all duration-300 hover:from-blue-600 hover:to-purple-700 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 tracking-wider max-w-[12rem] max-h-[12rem] sm:max-h-[13.75rem] sm:max-w-[13.75rem] md:max-w-[300px] md:max-h-[300px] rounded-full overflow-x-clip"
                     >
                         <span className="absolute inset-0 flex items-center justify-center rounded-full">
                             <span className="animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0deg_80deg,white_80deg_180deg,transparent_180deg_360deg)] h-full w-full rounded-xl" />
