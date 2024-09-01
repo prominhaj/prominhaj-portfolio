@@ -3,30 +3,28 @@ import Image from "next/image";
 
 import projectImg from "@/assets/best-project.png";
 import IframeEmbed from "@/components/globals/IframeEmbed/IframeEmbed";
+import { MacbookScroll } from "@/components/ui/macbook-scroll";
 
 const BestProjectSection = () => {
     return (
         <div>
-            <div className="container flex flex-col mx-auto overflow-hidden">
-                <ContainerScroll
-                    titleComponent={
-                        <>
-                            <h1 className="text-4xl font-semibold text-black dark:text-white">
-                                Unleash the power of <br />
-                                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                                    Scroll Animations
-                                </span>
-                            </h1>
-                        </>
+            <div className="container mx-auto overflow-hidden">
+                <MacbookScroll
+                    title={
+                        <span>
+                            This Macbook is built with Tailwindcss. <br /> No kidding.
+                        </span>
                     }
+                    showGradient={true}
                 >
-                    {/* <IframeEmbed
+                    <IframeEmbed
                         src="https://lpe.prominhaj.store"
                         title="LPE Pro Minhaj Store"
                         width="100%"
                         height="100%"
-                    /> */}
-                </ContainerScroll>
+                    />
+                </MacbookScroll>
+
             </div>
         </div>
     );
