@@ -8,6 +8,14 @@ import DownloadCV from "./DownloadCV";
 // Background Image
 import lightBg from "@/assets/Background/light-bg.jpg";
 import darkBg from "@/assets/Background/dark-bg.jpg";
+import {
+    IconBrandFacebook,
+    IconBrandGithub,
+    IconBrandInstagram,
+    IconBrandLinkedin,
+    IconBrandX,
+} from "@tabler/icons-react";
+
 
 const HeroSection = () => {
     return (
@@ -36,9 +44,11 @@ const HeroSection = () => {
                                 like Next JS.
                             </Highlight>
                         </motion.h1>
-                        <DownloadCV />
+                        <div className="flex items-center gap-3">
+                            <DownloadCV />
+                            <DownloadCV />
+                        </div>
                     </div>
-
                     <div
                         className="relative w-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 p-[1px] transition-all duration-300 hover:from-blue-600 hover:to-purple-700 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 tracking-wider max-w-[12rem] max-h-[12rem] sm:max-h-[13.75rem] sm:max-w-[13.75rem] md:max-w-[300px] md:max-h-[300px] rounded-full overflow-x-clip"
                     >

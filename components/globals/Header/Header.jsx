@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sheet"
 import { Icon, Menu } from "lucide-react";
 import NavigationMobileLink from "./NavigationMobileLink";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 // Navigation Likes
 const navigationItems = [
@@ -50,7 +51,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex items-center gap-3'>
+            <div className='flex items-center gap-2'>
                 <div className="hidden sm:block">
                     <Link
                         href='/login'
@@ -62,36 +63,45 @@ const Header = () => {
                         Login
                     </Link>
                 </div>
-                <ThemeSwitch />
-                {/* Mobile Responsive */}
-                <div className="block sm:hidden">
-                    <Sheet>
-                        <SheetTrigger asChild>
-                            <button className="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                                    <path fillRule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75H12a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
-                                </svg>
-                            </button>
-                        </SheetTrigger>
-                        <SheetContent side="left">
-                            <div className="flex flex-col items-start w-full gap-1 py-8">
-                                {
-                                    navigationItems.map((item, index) => (
-                                        <NavigationMobileLink key={index} item={item} />
-                                    ))
-                                }
-                                <Link
-                                    href='/login'
-                                    className={cn(
-                                        buttonVariants({ variant: 'default', size: 'sm' }),
-                                        'rounded-2xl tracking-wide w-full mt-2'
-                                    )}
-                                >
-                                    Login
-                                </Link>
-                            </div>
-                        </SheetContent>
-                    </Sheet>
+                <div className="flex items-center gap-0.5">
+                    <Link
+                        className={cn(buttonVariants({ variant: "outline", size: "sm" }), "p-2 border-0")}
+                        target="_blank"
+                        href="https://github.com/prominhaj"
+                    >
+                        <IconBrandGithub className="w-[22px] h-[22px]" />
+                    </Link>
+                    <ThemeSwitch />
+                    {/* Mobile Responsive */}
+                    <div className="block sm:hidden">
+                        <Sheet>
+                            <SheetTrigger asChild>
+                                <button className="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+                                        <path fillRule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75H12a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+                                    </svg>
+                                </button>
+                            </SheetTrigger>
+                            <SheetContent side="left">
+                                <div className="flex flex-col items-start w-full gap-1 py-8">
+                                    {
+                                        navigationItems.map((item, index) => (
+                                            <NavigationMobileLink key={index} item={item} />
+                                        ))
+                                    }
+                                    <Link
+                                        href='/login'
+                                        className={cn(
+                                            buttonVariants({ variant: 'default', size: 'sm' }),
+                                            'rounded-2xl tracking-wide w-full mt-2'
+                                        )}
+                                    >
+                                        Login
+                                    </Link>
+                                </div>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
                 </div>
             </div>
         </nav>
