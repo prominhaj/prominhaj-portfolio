@@ -15,7 +15,7 @@ const HeroSection = () => {
     return (
         <div>
             <HeroHighlight className="container mx-auto">
-                <div className="flex flex-col-reverse items-center justify-between gap-5 md:gap-10 md:flex-row">
+                <div className="flex flex-col-reverse items-center justify-between gap-5 lg:gap-10 lg:flex-row">
                     <div className="flex flex-col items-center gap-3">
                         <Meteors className="hidden md:block" number={20} />
                         <motion.h1
@@ -31,14 +31,14 @@ const HeroSection = () => {
                                 duration: 0.5,
                                 ease: [0.4, 0.0, 0.2, 1],
                             }}
-                            className="px-4 mx-auto text-3xl font-bold leading-snug text-center text-transparent sm:text-4xl md:leading-relaxed lg:text-5xl lg:leading-snug bg-clip-text bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-300 from-neutral-900 to-neutral-700"
+                            className="px-4 mx-auto text-2xl font-bold leading-snug text-center text-transparent sm:text-3xl md:text-4xl md:leading-relaxed lg:text-5xl lg:leading-snug bg-clip-text bg-gradient-to-b dark:from-neutral-100 dark:to-neutral-300 from-neutral-900 to-neutral-700"
                         >
                             I am a Web Full Stack Developer <br className="hidden md:block" /> and I mostly work with <br />
                             <Highlight className="text-black dark:text-white">
                                 like Next JS.
                             </Highlight>
                         </motion.h1>
-                        <div className="flex items-center gap-3 mt-2">
+                        <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
                             <DownloadCV />
                             <PrimaryButton href="/hire-me" link={true} className="!py-1.5 text-sm">
                                 <span>Hire Me →</span>
@@ -47,7 +47,7 @@ const HeroSection = () => {
                         </div>
                     </div>
                     <div
-                        className="relative w-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 p-[1px] transition-all duration-300 hover:from-blue-600 hover:to-purple-700 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 tracking-wider max-w-[12rem] max-h-[12rem] sm:max-h-[13.75rem] sm:max-w-[13.75rem] md:max-w-[300px] md:max-h-[300px] rounded-full overflow-x-clip"
+                        className="relative w-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 p-[1px] transition-all duration-300 hover:from-blue-600 hover:to-purple-700 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 tracking-wider max-w-[12rem] max-h-[12rem] sm:max-h-[13.75rem] sm:max-w-[13.75rem] lg:max-w-[300px] lg:max-h-[300px] rounded-full overflow-x-clip"
                     >
                         <span className="absolute inset-0 flex items-center justify-center rounded-full">
                             <span className="animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0deg_80deg,white_80deg_180deg,transparent_180deg_360deg)] h-full w-full rounded-xl" />
