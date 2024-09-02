@@ -8,13 +8,7 @@ import DownloadCV from "./DownloadCV";
 // Background Image
 import lightBg from "@/assets/Background/light-bg.jpg";
 import darkBg from "@/assets/Background/dark-bg.jpg";
-import {
-    IconBrandFacebook,
-    IconBrandGithub,
-    IconBrandInstagram,
-    IconBrandLinkedin,
-    IconBrandX,
-} from "@tabler/icons-react";
+import PrimaryButton from "@/components/globals/Button/PrimaryButton";
 
 
 const HeroSection = () => {
@@ -44,9 +38,12 @@ const HeroSection = () => {
                                 like Next JS.
                             </Highlight>
                         </motion.h1>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 mt-2">
                             <DownloadCV />
-                            <DownloadCV />
+                            <PrimaryButton href="/hire-me" link={true} className="!py-1.5 text-sm">
+                                <span>Hire Me →</span>
+                                <div className="absolute inset-x-0 w-3/4 h-px mx-auto -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
+                            </PrimaryButton>
                         </div>
                     </div>
                     <div

@@ -3,18 +3,15 @@ import NavigationLink from "./NavigationLink";
 import Link from "next/link";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import { Icon, Menu } from "lucide-react";
 import NavigationMobileLink from "./NavigationMobileLink";
 import { IconBrandGithub } from "@tabler/icons-react";
+import MagicButton from "../Button/MagicButton";
 
 // Navigation Likes
 const navigationItems = [
@@ -53,15 +50,14 @@ const Header = () => {
             </div>
             <div className='flex items-center gap-2'>
                 <div className="hidden sm:block">
-                    <Link
+                    <MagicButton
+                        link={true}
                         href='/login'
-                        className={cn(
-                            buttonVariants({ variant: 'default', size: 'sm' }),
-                            'rounded-2xl tracking-wide'
-                        )}
+                        containerClass="!h-8"
+                        className="!py-0.5"
                     >
                         Login
-                    </Link>
+                    </MagicButton>
                 </div>
                 <div className="flex items-center gap-0.5">
                     <Link
@@ -89,15 +85,14 @@ const Header = () => {
                                             <NavigationMobileLink key={index} item={item} />
                                         ))
                                     }
-                                    <Link
+                                    <MagicButton
+                                        link={true}
                                         href='/login'
-                                        className={cn(
-                                            buttonVariants({ variant: 'default', size: 'sm' }),
-                                            'rounded-2xl tracking-wide w-full mt-2'
-                                        )}
+                                        containerClass="!h-8 w-full mt-2"
+                                        className="!py-0.5"
                                     >
                                         Login
-                                    </Link>
+                                    </MagicButton>
                                 </div>
                             </SheetContent>
                         </Sheet>
