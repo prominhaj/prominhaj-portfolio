@@ -5,9 +5,6 @@ import myPhoto from '@/assets/my-photo.png';
 import Image from "next/image";
 import { Meteors } from "@/components/ui/meteors";
 import DownloadCV from "./DownloadCV";
-// Background Image
-import lightBg from "@/assets/Background/light-bg.jpg";
-import darkBg from "@/assets/Background/dark-bg.jpg";
 import PrimaryButton from "@/components/globals/Button/PrimaryButton";
 
 
@@ -52,20 +49,14 @@ const HeroSection = () => {
                         <span className="absolute inset-0 flex items-center justify-center rounded-full">
                             <span className="animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0deg_80deg,white_80deg_180deg,transparent_180deg_360deg)] h-full w-full rounded-xl" />
                         </span>
-                        <div className="relative rounded-full">
-                            {/* Light BG */}
-                            <Image className="absolute top-0 bottom-0 left-0 right-0 block w-full h-full rounded-full dark:hidden" src={lightBg} width={300} height={300} alt="light-bg" />
-                            {/* Dark BG */}
-                            <Image className="absolute top-0 bottom-0 left-0 right-0 hidden w-full h-full rounded-full dark:block" src={darkBg} width={300} height={300} alt="dark-bg" />
-                            <Image
-                                className="object-cover w-full h-full rounded-full brightness-90 drop-shadow-lg"
-                                src={myPhoto}
-                                width={300}
-                                height={300}
-                                priority
-                                alt="my-photo"
-                            />
-                        </div>
+                        <Image
+                            className="object-cover w-full h-full rounded-full brightness-90 drop-shadow-lg bg-gradient-to-br dark:from-blue-900 dark:via-blue-800 dark:to-purple-900 from-blue-100 via-purple-100 to-pink-100"
+                            src={myPhoto}
+                            width={300}
+                            height={300}
+                            priority
+                            alt="my-photo"
+                        />
                     </div>
                 </div>
             </HeroHighlight>
