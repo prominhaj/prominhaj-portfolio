@@ -17,7 +17,7 @@ const ThemeSwitch = () => {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button
-                    className="border-0 focus-visible:outline-none focus-visible:ring-0"
+                    className="bg-transparent border-0 shadow-none focus-visible:outline-none focus-visible:ring-0"
                     variant="outline"
                     size="icon"
                 >

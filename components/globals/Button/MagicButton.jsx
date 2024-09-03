@@ -9,6 +9,7 @@ const MagicButton = ({ children, link, containerClass, className, href, props })
                 link ? (
                     <Link
                         href={href}
+                        target="_blank"
                         {...props}
                         className={cn(containerClass, "relative inline-flex h-10 overflow-hidden rounded-full p-[1px]")}
                     >

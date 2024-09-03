@@ -61,7 +61,7 @@ const Header = () => {
                 </div>
                 <div className="flex items-center gap-0.5">
                     <Link
-                        className={cn(buttonVariants({ variant: "outline", size: "sm" }), "p-2 border-0")}
+                        className={cn(buttonVariants({ variant: "outline", size: "sm" }), "p-2 shadow-none bg-transparent border-0")}
                         target="_blank"
                         href="https://github.com/prominhaj"
                     >

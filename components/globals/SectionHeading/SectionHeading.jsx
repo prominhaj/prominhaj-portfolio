@@ -20,7 +20,6 @@ const SectionHeading = ({ children, className }) => {
                     maxSize={1}
                     particleDensity={1200}
                     className="w-full h-full"
-                    particleColor="#FFFFFF"
                 />
 
 
