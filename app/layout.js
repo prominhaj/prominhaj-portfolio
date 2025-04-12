@@ -13,6 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang='en'>
+          <head>
+        <meta name="cryptomus" content="e78d72a9" />
+      </head>
             <body className={cn(inter.className, 'dark:bg-[#03060D] bg-[#FFFFFF]')}>
                 <ThemeProvider
                     attribute='class'
